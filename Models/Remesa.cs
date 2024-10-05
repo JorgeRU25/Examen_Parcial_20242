@@ -1,12 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Examen_Parcial_20242.Models
 {
+    [Table("t_remesas")]
     public class Remesa
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string? NombreRemitente { get; set; }
         public string? NombreDestinatario { get; set; }
