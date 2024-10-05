@@ -9,4 +9,6 @@ public class ApplicationDbContext : IdentityDbContext
         : base(options)
     {
     }
+
+    public DbSet<Examen_Parcial_20242.Models.Remesa> Remesas { get; set; }
 }

@@ -1,0 +1,64 @@
+@model Examen_Parcial_20242.Models.Remesa
+@{
+    ViewBag.Title = "Registrar Remesa";
+}
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 border border-dark">
+            <form asp-asp-controller="Remesa" asp-action="Registrar" method="post"
+                class="p-4 border rounded bg-light shadow">
+                <h3 class="text-center mb-4">Registrar Remesa</h3>
+
+                <div class="mb-3">
+                    <label for="NombreRemitente" class="form-label">Nombre Remitente</label>
+                    <input asp-for="NombreRemitente" class="form-control"
+                        placeholder="Ingrese el nombre del remitente" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="NombreDestinatario" class="form-label">Nombre Destinatario</label>
+                    <input asp-for="NombreDestinatario" class="form-control" using
+                        Microsoft.EntityFrameworkCore.Metadata.Internal;
+                        placeholder="Ingrese el nombre del destinatario" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="PaisOrigen" class="form-label">País Origen</label>
+                    <input asp-for="PaisOrigen" class="form-control" placeholder="Ingrese el país de origen" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="PaisDestino" class="form-label">País Destino</label>
+                    <input asp-for="PaisDestino" class="form-control" placeholder="Ingrese el país de destino" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="MontoEnviado" class="form-label">Monto Enviado</label>
+                    <input asp-for="MontoEnviado" class="form-control" placeholder="Ingrese el monto enviado" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="Moneda" class="form-label">Moneda</label>
+                    <select asp-for="Moneda" id="Moneda" class="form-select">
+                        <option value="USD">USD</option>
+                        <option value="BTC">BTC</option>
+                    </select>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Registrar Remesa</button>
+                </div>
+            </form>
+        </div>
+
+        @if (ViewBag.Message != null)
+        {
+            <div class="alert alert-success text-center">
+                @ViewBag.Message
+            </div>
+        }
+
+    </div>
+</div>
