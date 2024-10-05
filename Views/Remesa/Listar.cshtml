@@ -1,0 +1,45 @@
+@model IEnumerable<Examen_Parcial_20242.Models.Remesa>
+
+@{
+    ViewBag.Title = "Listar Remesas";
+}
+
+<h1 style="text-align:center;">Listar Remesas</h1>
+
+<p><a asp-action="Index">Crear Registro de Remesas</a></p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre del Remitente</th>
+            <th scope="col">Nombre Destinatario</th>
+            <th scope="col">Pais de Origen</th>
+            <th scope="col">Pais Destino</th>
+            <th scope="col">MontoEnviado</th>
+            <th scope="col">Moneda/th>
+            <th scope="col">TasaCambio</th>
+            <th scope="col">MontoFinal</th>
+            <th scope="col">Estado</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@Html.DisplayFor(modelItem => item.Id)</th>
+                <td>@Html.DisplayFor(modelItem => item.NombreRemitente)</td>
+                <td>@Html.DisplayFor(modelItem => item.NombreDestinatario)</td>
+                <td>@Html.DisplayFor(modelItem => item.PaisOrigen)</td>
+                <td>@Html.DisplayFor(modelItem => item.PaisDestino)</td>
+                <td>@Html.DisplayFor(modelItem => item.MontoEnviado)</td>
+                <td>@Html.DisplayFor(modelItem => item.Moneda)</td>
+                <td>@Html.DisplayFor(modelItem => item.TasaCambio)</td>
+                <td>@Html.DisplayFor(modelItem => item.MontoFinal)</td>
+                <td>@Html.DisplayFor(modelItem => item.Estado)</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
