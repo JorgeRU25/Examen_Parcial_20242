@@ -27,6 +27,13 @@ namespace Examen_Parcial_20242.Controllers
             return View();
         }
 
+        public IActionResult Listar()
+        {
+            var listarRemesas = _context.Remesas.ToList();
+            return View(listarRemesas);
+        }
+
+
         [HttpPost]
         public IActionResult Registrar(Remesa remesa)
         {
