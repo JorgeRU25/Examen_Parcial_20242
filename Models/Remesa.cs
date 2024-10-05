@@ -18,5 +18,6 @@ namespace Examen_Parcial_20242.Models
         public decimal MontoFinal { get; set; }
         public string? Estado { get; set; } // "Pendiente", "Completada"
 
+        public string? Mensaje { get; set; }
     }
 }
